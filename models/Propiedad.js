@@ -24,7 +24,7 @@ const Propiedad = db.define('propiedades', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    WC: {
+    wc: {
         type: DataTypes.INTEGER,
         allowNull: false
     },

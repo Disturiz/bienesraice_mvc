@@ -71,6 +71,11 @@ const autenticar = async (req, res) => {
     }).redirect('/mis-propiedades')
 }
 
+
+const cerrarSesion = (req, res) => {
+    return res.clearCookie('_token').status(200).redirect('/auth/login')
+}
+
 const   formularioRegistro = (req, res) => {
     res.render('auth/registro', {
         pagina: 'Crear Cuenta',  
@@ -145,7 +150,7 @@ const registrar = async (req, res) => {
     // Mostrar mensaje de confirmación
     res.render('plantillas/mensaje', {
         pagina: 'Cuenta creada correctamente',
-        mensaje: 'Hemos enviado un Email de Confirmación, presiona en el enlace'
+        mensaje: 'Hemos enviado un Email de Confirmación, favor presionar en el enlace'
     })
 }
 
@@ -297,6 +302,7 @@ const nuevoPassword = async (req, res) => {
 export {
     formularioLogin,
     autenticar,
+    cerrarSesion,
     formularioRegistro,
     registrar,
     confirmar,

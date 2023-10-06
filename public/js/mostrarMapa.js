@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/mapa.js":
-/*!************************!*\
-  !*** ./src/js/mapa.js ***!
-  \************************/
+/***/ "./src/js/mostrarMapa.js":
+/*!*******************************!*\
+  !*** ./src/js/mostrarMapa.js ***!
+  \*******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nalert('Soy un Mapa')\n\n//# sourceURL=webpack://bienesraices_mvc/./src/js/mapa.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n(function() {\r\n    const lat = document.querySelector('#lat').textContent\r\n    const lng = document.querySelector('#lng').textContent\r\n    const calle = document.querySelector('#calle').textContent\r\n    const titulo = document.querySelector('#titulo').textContent\r\n    const mapa = L.map('mapa').setView([lat, lng], 16)\r\n\r\n    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n        attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n    }).addTo(mapa);\r\n\r\n    // Agregar el pin\r\n    L.marker([lat, lng])\r\n        .addTo(mapa)\r\n        .bindPopup(`${calle},  ${titulo}`)\r\n\r\n})()\r\n\r\n\n\n//# sourceURL=webpack://bienesraices_mvc/./src/js/mostrarMapa.js?");
 
 /***/ })
 
@@ -43,7 +43,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nalert('Soy un Mapa')\n\n//# s
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/js/mapa.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/js/mostrarMapa.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
